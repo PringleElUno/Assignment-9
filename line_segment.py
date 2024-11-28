@@ -55,17 +55,17 @@ class Point:
 
 # Creating the class LineSegment that has two of the data members endpoint_1 and endpoint_2
 class LineSegment:
-    def __init__(self, endpoint_1, endpoint_2):
+    def __init__(self, _endpoint_1, _endpoint_2):
         """
         Initialize the LineSegment object utilizing the two end points.
 
         Parameters:
-            endpoint_1 (Point): The first endpoint of the LineSegment.
-            endpoint_2 (Point): The second endpoint of the LineSegment.
+            _endpoint_1 (Point): The first endpoint of the LineSegment.
+            _endpoint_2 (Point): The second endpoint of the LineSegment.
         """
 
-        self.endpoint_1 = endpoint_1
-        self.endpoint_2 = endpoint_2
+        self._endpoint_1 = _endpoint_1
+        self._endpoint_2 = _endpoint_2
 
 # Setting up the getter methods for each end point
     def get_endpoint_1(self):
@@ -94,8 +94,8 @@ class LineSegment:
         Returns:
             Float: The length of the LineSegment.
         """
-        x_diff = self.endpoint_1.get_x_coord() - self.endpoint_2.get_x_coord()
-        y_diff = self.endpoint_1.get_y_coord() - self.endpoint_2.get_y_coord()
+        x_diff = self._endpoint_1.get_x_coord() - self._endpoint_2.get_x_coord()
+        y_diff = self._endpoint_1.get_y_coord() - self._endpoint_2.get_y_coord()
         return (x_diff ** 2 + y_diff ** 2) ** 0.5
 
 # Defining the slope between the end points
@@ -107,10 +107,10 @@ class LineSegment:
             float: The slope of the LineSegment.
         """
 
-        x_coord_of_endpoint1 = self.endpoint_1.get_x_coord()
-        x_coord_of_endpoint2 = self.endpoint_2.get_x_coord()
-        y_coord_of_endpoint1 = self.endpoint_1.get_y_coord()
-        y_coord_of_endpoint2 = self.endpoint_2.get_y_coord()
+        x_coord_of_endpoint1 = self._endpoint_1.get_x_coord()
+        x_coord_of_endpoint2 = self._endpoint_2.get_x_coord()
+        y_coord_of_endpoint1 = self._endpoint_1.get_y_coord()
+        y_coord_of_endpoint2 = self._endpoint_2.get_y_coord()
 
         if x_coord_of_endpoint1 == x_coord_of_endpoint2:
             return None
