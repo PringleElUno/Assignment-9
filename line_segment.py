@@ -67,7 +67,7 @@ class LineSegment:
         self._endpoint_1 = _endpoint_1
         self._endpoint_2 = _endpoint_2
 
-# Setting up the getter methods for each end point
+    # Setting up the getter methods for each end point
     def get_endpoint_1(self):
         """
         Gets the first end point of the LineSegment.
@@ -86,7 +86,7 @@ class LineSegment:
         """
         return self._endpoint_2
 
-# Defining the length of the LineSegments between the end points
+    # Defining the length of the LineSegments between the end points
     def length(self):
         """
         Calculate the length of the LineSegment utilizing the distance between both end points.
@@ -98,7 +98,7 @@ class LineSegment:
         y_diff = self._endpoint_1.get_y_coord() - self._endpoint_2.get_y_coord()
         return (x_diff ** 2 + y_diff ** 2) ** 0.5
 
-# Defining the slope between the end points
+    # Defining the slope between the end points
     def slope(self):
         """
         Calculates the slope of the LineSegment.
@@ -117,7 +117,7 @@ class LineSegment:
 
         return (y_coord_of_endpoint2 - y_coord_of_endpoint1) / (x_coord_of_endpoint2 - x_coord_of_endpoint1)
 
-# Defined the method is_parallel_to find if the LineSegment is parallel to the other
+    # Defined the method is_parallel_to find if the LineSegment is parallel to the other
     def is_parallel_to(self, line_segment2):
         """
         Checks if the current LineSegment is parallel to the other LineSegment.
@@ -129,8 +129,8 @@ class LineSegment:
         Returns:
             bool: True if the Line segments are parallel, false if they are not parallel.
         """
-
-        if self.length() == 0 or line_segment2.length() = 0:
+        # Create an if statement to see if both LineSegment objects are parallel
+        if self.length() == 0 or line_segment2.length() == 0:
             return False
 
         slope_of_first_line = self.slope()
@@ -139,4 +139,5 @@ class LineSegment:
         if slope_of_first_line is None or slope_of_second_line is None:
             return slope_of_first_line == slope_of_second_line
 
+        # Return the absolute value
         return abs(slope_of_first_line - slope_of_second_line) < 0.000001
