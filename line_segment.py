@@ -2,7 +2,9 @@
 # GitHub username: PringleElUno
 # Date: 11/26/2024
 # Define a Point class that has two data members, _x_ coord and _y_coord, representing the two
-# coordinates of the point
+# coordinates of the point.
+# Created a method of is_parallel_to that also has the LineSegment object parameter. It returns True if the LineSegment
+# the method is being called on is parallel to the one  being passed as the parameter as well.
 
 # Defining the point class and initializing it
 class Point:
