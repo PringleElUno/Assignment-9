@@ -130,7 +130,7 @@ class LineSegment:
             bool: True if the Line segments are parallel, false if they are not parallel.
         """
 
-        if self.length() == 0 or line_segment2.length() = 0:
+        if self.length() == 0 or line_segment2.length() == 0:
             return False
 
         slope_of_first_line = self.slope()
