@@ -6,35 +6,35 @@
 
 # Defining the point class and initializing it
 class Point:
-    def __init__(self, x_coordinate, y_coordinate):
+    def __init__(self, x_coord, y_coord):
         """
        Initializes the point object with the x and y coordinates.
     
         Parameters:
-            x_coordinate (float): The x_coordinate of the point.
-            y_coordinate (float): The y_coordinate of the point.
+            x_coord (float): The x_coordinate of the point.
+            y_coord (float): The y_coordinate of the point.
          """
-        self._x_coordinate = x_coordinate
-        self._y_coordinate = y_coordinate
+        self._x_coord = x_coord
+        self._y_coord = y_coord
 
 # Setting up the getter methods
-    def get_x_coordinate(self):
+    def get_x_coord(self):
         """
         Gets the x_coordinate of the point.
 
         Returns:
             float: The x_coordinate.
         """
-        return self._x_coordinate
+        return self._x_coord
 
-    def get_y_coordinate(self):
+    def get_y_coord(self):
         """
         Gets the y_coordinate of the point.
 
         Returns:
             float: The y_coordinate.
         """
-        return self._y_coordinate
+        return self._y_coord
 
     #The __init__, get_x_coordinate, and get_y_coordinate are defined
     def distance_to(self, other_point):
@@ -49,8 +49,8 @@ class Point:
         """
 
         # Calculate the distance directly from the given formula
-        x_diff = self._x_coordinate - other_point.get_x_coordinate()
-        y_diff = self._y_coordinate - other_point.get_y_coordinate()
+        x_diff = self._x_coord - other_point.get_x_coord()
+        y_diff = self._y_coord - other_point.get_y_coord()
         return (x_diff ** 2 + y_diff ** 2) ** 0.5
 
 # Creating the class LineSegment that has two of the data members endpoint_1 and endpoint_2
@@ -75,7 +75,7 @@ class LineSegment:
         Return:
              Point: The first end point.
         """
-        return self.endpoint_1
+        return self._endpoint_1
 
     def get_endpoint_2(self):
         """
@@ -84,7 +84,7 @@ class LineSegment:
         Returns:
             Point: The second end point.
         """
-        return self.endpoint_2
+        return self._endpoint_2
 
 # Defining the length of the LineSegments between the end points
     def length(self):
@@ -94,8 +94,8 @@ class LineSegment:
         Returns:
             Float: The length of the LineSegment.
         """
-        x_diff = self.endpoint_1.get_x_coordinate() - self.endpoint_2.get_x_coordinate()
-        y_diff = self.endpoint_1.get_y_coordinate() - self.endpoint_2.get_y_coordinate()
+        x_diff = self.endpoint_1.get_x_coord() - self.endpoint_2.get_x_coord()
+        y_diff = self.endpoint_1.get_y_coord() - self.endpoint_2.get_y_coord()
         return (x_diff ** 2 + y_diff ** 2) ** 0.5
 
 # Defining the slope between the end points
@@ -107,15 +107,15 @@ class LineSegment:
             float: The slope of the LineSegment.
         """
 
-        x_coordinate_of_endpoint1 = self.endpoint_1.get_x_coordinate()
-        x_coordinate_of_endpoint2 = self.endpoint_2.get_x_coordinate()
-        y_coordinate_of_endpoint1 = self.endpoint_1.get_y_coordinate()
-        y_coordinate_of_endpoint2 = self.endpoint_2.get_y_coordinate()
+        x_coord_of_endpoint1 = self.endpoint_1.get_x_coord()
+        x_coord_of_endpoint2 = self.endpoint_2.get_x_coord()
+        y_coord_of_endpoint1 = self.endpoint_1.get_y_coord()
+        y_coord_of_endpoint2 = self.endpoint_2.get_y_coord()
 
-        if x_coordinate_of_endpoint1 == x_coordinate_of_endpoint2:
+        if x_coord_of_endpoint1 == x_coord_of_endpoint2:
             return None
 
-        return (y_coordinate_of_endpoint2 - y_coordinate_of_endpoint1) / (x_coordinate_of_endpoint2 - x_coordinate_of_endpoint1)
+        return (y_coord_of_endpoint2 - y_coord_of_endpoint1) / (x_coord_of_endpoint2 - x_coord_of_endpoint1)
 
 # Defined the method is_parallel_to find if the LineSegment is parallel to the other
     def is_parallel_to(self, line_segment2):
